@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import {
   mobile,
   backend,
@@ -39,8 +40,12 @@ export const navLinks = [
     title: "Contact",
   },
 ];
+type objectServices = {
+  title: string;
+  icon: StaticImageData;
+};
 
-const services = [
+const services: Array<objectServices> = [
   {
     title: "Web Developer",
     icon: web,
@@ -59,7 +64,12 @@ const services = [
   },
 ];
 
-const technologies = [
+type objectTechnologies = {
+  name: string;
+  icon: StaticImageData;
+};
+
+const technologies: Array<objectTechnologies> = [
   {
     name: "HTML 5",
     icon: html,
@@ -113,8 +123,20 @@ const technologies = [
     icon: docker,
   },
 ];
+type objectExperience = {
+  title: string;
+  company_name: string;
+  icon: StaticImageData;
+  iconBg: string;
+  date: string;
+  points: string[];
+};
 
-const experiences = [
+export interface ExperienceTypeProps {
+  experience: objectExperience;
+}
+
+const experiences: Array<objectExperience> = [
   {
     title: "React.js Developer",
     company_name: "Starbucks",
@@ -169,7 +191,19 @@ const experiences = [
   },
 ];
 
-const testimonials = [
+type objectTestimonial = {
+  testimonial: string;
+  name: string;
+  designation: string;
+  company: string;
+  image: string;
+};
+
+export interface TestimonialTypeProps {
+  testimonial: objectTestimonial;
+}
+
+const testimonials: objectTestimonial[] = [
   {
     testimonial:
       "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
@@ -196,7 +230,23 @@ const testimonials = [
   },
 ];
 
-const projects = [
+type objectProject = {
+  name: string;
+  description: string;
+  tags: objectTag[];
+  image: StaticImageData;
+  source_code_link: string;
+};
+type objectTag = {
+  name: string;
+  color: string;
+};
+
+export interface ProjectTypeProps {
+  project: objectProject;
+}
+
+const projects: Array<objectProject> = [
   {
     name: "Car Rent",
     description:

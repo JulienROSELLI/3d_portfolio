@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Navbar from "./_components/Navbar";
 import Hero from "./_components/Hero";
@@ -7,6 +8,7 @@ import Tech from "./_components/Tech";
 import Works from "./_components/Works";
 import Feedbacks from "./_components/Feedbacks";
 import Contact from "./_components/Contact";
+import { StarsCanvas } from "./_components";
 
 export default function Home() {
   return (
@@ -21,6 +23,7 @@ export default function Home() {
       <Works />
       <Feedbacks />
       <div className="relative z-0">
+        <StarsCanvas />
         <Contact />
       </div>
     </main>
